@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/eb09924ec6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'ticket/style.css' %}" type="text/css">
+    <title>{{ booking_type|title }} Success</title>
+</head>
+
+<body>
+    <div class="success">
+        <div class="success-ticket">
+            <h1>{{ booking_type|title }} Booking Confirmed ✅</h1>
+            <p>Thank you {{ booking.passenger_name }}! Your ticket has been booked.</p>
+
+            <h3>Booking Details:</h3>
+            <ul>
+                <li>From: {{ booking.from_place }}</li>
+                <li>To: {{ booking.to_place }}</li>
+                <li>Date: {{ booking.journey_date }}</li>
+                <li>Seats: {{ booking.seats }}</li>
+                <li>Email: {{ booking.email }}</li>
+                <li>Phone: {{ booking.phone }}</li>
+            </ul>
+            <div class="link">
+                 <a href="{% url 'bookingticket:index' %}" class="btn2">Back to Home</a>
+                <a href="{% url 'bookingticket:download_ticket' booking_type=booking_type booking_slug=booking.slug %}" class="btn2">Download PDF</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

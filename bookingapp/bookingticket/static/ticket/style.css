@@ -1,0 +1,609 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.navbar{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    position: sticky;
+    top: 0px;
+    z-index: 99;
+    background-color: white;
+}
+.menu{
+    display: none;
+}
+.open{
+    display: none;
+}
+.close{
+    display: none;
+}
+.subnav a{
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 500;
+    margin-left: 30px;
+    color: black;
+    position: relative;
+    display: inline;
+    transition: color 0.3s ease;
+    padding: 7px;
+    z-index: 1;
+    overflow: hidden;
+}
+.subnav a::before{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: -1;
+    background: purple;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.subnav a:hover{
+    color: white;
+}
+.subnav a:hover::before{
+    transform: scaleX(1);
+}
+.ticket{
+    width: 100%;
+    height: 450px;
+    background-color: aliceblue;
+    padding: 1px;
+}
+.subtitle{
+    margin-top: 5rem;
+    text-align: center;
+}
+.subtitle span{
+    color: purple;
+}
+.ticket-container{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width: 300px;
+    height: 200px;
+    box-shadow: 0 1px 3px black;
+}
+.box img{
+    width: 300px;
+    height: 200px;
+}
+.box1{
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 45px;
+    box-shadow: 0 1px 3px black;
+    transition: all 0.3s ease
+}
+.box1 h2 ,.box1 i{
+    transition: all 0.3s ease
+}
+.box1 i{
+    color: purple;
+}
+.box1:hover i{
+    transform: translateX(-10px);
+}
+.box1:hover h2{
+    color: purple;
+}
+.btn{
+    box-shadow: 0 0 20px purple;
+    border: 1px solid purple;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    width: 150px;
+    height: 40px;
+    margin-top: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.btn::before{
+    position: absolute;
+    content: '';
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 0%;
+    z-index: -1;
+    background-color: purple;
+    transition: 0.5s;
+}
+.btn:hover::before{
+    height: 100%;
+}
+.btn:hover{
+    color: aliceblue;
+}
+.container{
+    width: 100%;
+    height: 800px;
+    padding: 1px;
+    background-color: #ddd;
+}
+.booking{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.booking-container{
+    width: 400px;
+    height: 600px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 20px black;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+.booking-container h2{
+    margin: 15px;
+    color: purple;
+}
+form input{
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 20px;
+    font-size: 15px;
+}
+.booking-container h2, .booking-container i{
+    transition: all 0.3s ease;
+}
+.booking-container:hover h2{
+    transform: translatey(-10px);
+}
+.booking-container:hover i{
+    transform: rotate(360deg);
+}
+.btn1{
+    width: 150px;
+    height: 40px;
+    margin-top: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.btn1::before{
+    position: absolute;
+    content: '';
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 0%;
+    z-index: -1;
+    background-color: purple;
+    transition: 0.5s;
+}
+.btn1:hover::before{
+    height: 100%;
+}
+.btn1:hover{
+    color: aliceblue;
+}
+.list{
+    width: 100%;
+    height: 400px;
+    padding: 1px;
+}
+.box-list{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.list-box{
+    width: 250px;
+    height: 150px;
+    padding: 20px;
+    line-height: 25px;
+    background-color: aliceblue;
+    box-shadow: 0 0 20px black;
+    border-radius: 10px;
+    position: relative;
+    transition: 0.2s ease;
+}
+.list-box:hover{
+    transform: scale(1.1);
+}
+.list-box h2{
+    color: purple;
+}
+.list-box i{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 35px;
+    color: purple;
+    animation: top 1s linear infinite;
+}
+@keyframes top{
+    100%{
+        transform: translateY(-10px);
+    }
+}
+.help{
+    width: 100%;
+    height: 600px;
+}
+.booking-content{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.booking-text{
+    line-height: 35px;
+    font-size: 20px;
+}
+.success{
+    width: 100%;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+}
+.success-ticket{
+    width: 600px;
+    height: 450px;
+    padding: 20px;
+    box-shadow: 0 0 20px;
+    border-radius: 10px;
+    line-height: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.success-ticket p{
+    font-size: 18px;
+}
+.success-ticket li{
+    font-size: 20px;
+}
+.btn2{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    position: relative;
+    display: inline;
+    transition: color 0.3s ease;
+    padding: 7px;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0 0 10px purple;
+    border-radius: 10px;
+    color: purple;
+}
+.btn2::before{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: -1;
+    background: purple;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    padding: 1px;
+}
+.btn2:hover{
+    color: white;
+}
+.btn2:hover::before{
+    transform: scaleX(1);
+}
+.link{
+    display: flex;
+    margin-top: 15px;
+}
+.footer{
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    color: white;
+}
+.foot-ter{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.foot-icon{
+    text-align: center;
+}
+.foot-icon i{
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    border-color: white;
+}
+.foot-icon i:hover{
+    box-shadow: 0 0 20px;
+}
+.foot-text{
+    text-align: center;
+}
+.foot-text a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+.copyright{
+    text-align: center;
+}
+
+
+
+@media screen and (min-width: 280px) and (max-width: 554px){
+    .navbar{
+        width: 100%;
+    }
+    .subnav{
+        position: absolute;
+        top: 70px;
+        left: 0px;
+        width: 100%;
+        height: 0px;
+        overflow: hidden;
+        transition: 0.5s ease;
+        z-index: 99;
+        background-color: white;
+        
+    }
+    .subnav a{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 15px;
+        transform: translateY(-50px);
+        color: black;
+    }
+    .open{
+        color: black;
+        display: block;
+        font-size: 25px;
+    }
+    .close{
+        color: black;
+        font-size: 25px;
+    }
+    .menu:checked ~ .open{
+        display: none;
+    }
+    .menu:checked ~ .close{
+        display: block;
+    }
+    .menu:checked  ~ .subnav{
+        height: 250px;
+        transform: translateY(0px);
+    }
+    .ticket{
+        width: 100%;
+        height: auto;
+    }
+    .ticket-container{
+        width: 100%;
+        height: 450px;
+        flex-direction: column;
+    }
+    .box{
+        width: 90%;
+        height: 200px;
+    }
+    .box img{
+        width: 100%;
+        height: 100%;
+    }
+    .box1{
+        width: 90%;
+        height: 200px;
+        padding: 10px;
+    }
+    .container{
+        width: 100%;
+        height: auto;
+    }
+    .booking{
+        width: 100%;
+        height: 700px;        
+    }
+    .booking-container{
+        width: 90%;
+        height: 600px;
+    }
+    form input{
+        width: 85%;
+    }
+    .btn1{
+        width: 120px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .list{
+        width: 100%;
+        height: auto;
+    }
+    .box-list{
+        width: 100%;
+        height: 900px;
+        flex-direction: column;
+    }
+    .list-box{
+        width: 90%;
+        height: 150px;
+    }
+    .booking-content{
+        width: 100%;
+        height: auto
+    }
+    .booking-text{
+        width: 90%;
+        line-height: 35px;
+        font-size: 20px;
+    }
+    .success{
+        width: 100%;
+    }
+    .success-ticket{
+        width: 90%;
+        height: auto;
+    }
+    .footer{
+        width: 100%;
+        height: 200px;
+    }
+    .foot-ter{
+        width: 90%;
+        height: 150px;
+    }
+    .foot-icon{
+        width: 80%;
+    }
+    .foot-icon i{
+        margin-left: 0px;
+    }
+}
+
+@media screen and (min-width: 545px) and (max-width: 768px){
+    .navbar{
+        width: 100%;
+    }
+    
+    .ticket{
+        width: 100%;
+        height: auto;
+    }
+    .ticket-container{
+        width: 100%;
+        height: 300px;
+        padding: 20px;
+    }
+    .box{
+        width: 70%;
+        height: 200px;
+    }
+    .box img{
+        width: 100%;
+        height: 100%;
+    }
+    .box1{
+        width: 60%;
+        height: 200px;
+        padding: 10px;
+    }
+    .container{
+        width: 100%;
+        height: auto;
+    }
+    .booking{
+        width: 100%;
+        height: 700px;        
+    }
+    .booking-container{
+        width: 90%;
+        height: 600px;
+    }
+    form input{
+        width: 85%;
+    }
+    .btn1{
+        width: 120px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .list{
+        width: 100%;
+        height: auto;
+    }
+    .box-list{
+        width: 100%;
+        height: 800px;
+        flex-direction: column;
+    }
+    .list-box{
+        width: 90%;
+        height: 150px;
+    }
+    .booking-content{
+        width: 100%;
+        height: 700px;
+    }
+    .booking-text{
+        width: 90%;
+        height: 580px;
+        line-height: 35px;
+        font-size: 20px;
+    }
+    .success{
+        width: 100%;
+    }
+    .success-ticket{
+        width: 90%;
+    }
+    .footer{
+        width: 100%;
+        height: 200px;
+    }
+    .foot-ter{
+        width: 90%;
+        height: 150px;
+    }
+    .foot-icon{
+        width: 80%;
+    }
+    .foot-icon i{
+        margin-left: 0px;
+    }
+
+}

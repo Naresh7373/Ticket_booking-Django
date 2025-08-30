@@ -1,0 +1,48 @@
+{% extends 'ticket/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<section id="train" class="ticket">
+    <h1 class="subtitle">BOOK YOUR <span>TRAIN</span> TICKET</h1>
+    <div class="ticket-container">
+        <div class="box">
+            <img src="{% static 'images/traingif.gif' %}" alt="train">
+        </div>
+        <div class="box1">
+            <h2><i class="fa-solid fa-train-subway"></i> Book Your Train Ticket</h2>
+            <h2>Lets Start Your Journey</h2>
+            <a href= "{% url 'bookingticket:train_booking' %}" class="btn">Book Here</a>
+        </div>
+    </div>
+</section>
+<section id="bus" class="ticket">
+    <h1 class="subtitle">BOOK YOUR <span>BUS</span> TICKET</h1>
+    <div class="ticket-container">
+        <div class="box">
+            <img src="{% static 'images/bus.gif' %}" alt="bus">
+        </div>
+        <div class="box1">
+            <h2><i class="fa-solid fa-bus"></i> Book Your Bus Ticket</h2>
+            <h2>Lets Start Your Journey</h2>
+            <a href="{% url 'bookingticket:bus_booking' %}" class="btn">Book Here</a>
+        </div>
+    </div>
+</section>
+<section id="flight" class="ticket">
+    <h1 class="subtitle">BOOK YOUR <span>FLIGHT</span> TICKET</h1>
+    <div class="ticket-container">
+        <div class="box">
+            <img src="{% static 'images/flight.gif' %}" alt="flight">
+        </div>
+        <div class="box1">
+            <h2><i class="fa-solid fa-plane"></i> Book Your Flight Ticket</h2>
+            <h2>Lets Start Your Journey</h2>
+            <a href="{% url 'bookingticket:flight_booking' %}" class="btn">Book Here</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

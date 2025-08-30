@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/eb09924ec6.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href= "{% static 'ticket/style.css' %}" type="text/css">
+<title>{{booking_title | upper | default:"document"}}</title>
+</head>
+
+<body>
+{% comment %} Header {% endcomment %}
+{% include 'ticket/includes/header.html' %}
+
+{% comment %} Dynamic content {% endcomment %}
+{% block content %}
+{% endblock %}
+
+{% comment %} Footer {% endcomment %}
+{%  include 'ticket/includes/footer.html' %}
+
+</footer>
+</body>
+</html>

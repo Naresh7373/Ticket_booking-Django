@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/eb09924ec6.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href= "{% static 'ticket/style.css' %}" type="text/css">
+<title>Ticket Booking</title>
+</head>
+
+<body>
+<nav class="navbar">
+    <h2>BOOKING</h2>
+    <input type="checkbox" id="check" class="menu">
+    <label for="check" class="open"><i class="fa-solid fa-list-ul"></i></label>
+    <label for="check" class="close"><i class="fa-solid fa-circle-xmark"></i></label>
+    <div class="subnav">
+        <a href="{% url 'bookingticket:index' %}">Home</a>
+        <a href="{% url 'bookingticket:train_booking' %}">Train</a>
+        <a href="{% url 'bookingticket:bus_booking' %}">Bus</a>
+        <a href="#help">Need Help</a>
+    </div>
+</nav>
+<div class="container">
+    <h1 class="subtitle">BOOK YOUR <span>FLIGHT</span> TICKET</h1>
+    <div class="booking">
+    
+        <div class="booking-container">
+            <h2><i class="fa-solid fa-bus"></i> Flight Ticket Booking</h2>
+            <form method="post">
+                {% csrf_token %}
+                <input type="" name="from_place" placeholder="Leaving From" list="fromplace" required><br><br>
+                <datalist id="fromplace">
+                    <option value="Banglore">
+                    <option value="Chennai">
+                    <option value="Hyderbhad">
+                    <option value="Mumbai">
+                    <option value="Delhi">
+                </datalist>
+                <input type="text" name="to_place" placeholder="Going To" list="goplace" required><br><br>
+                <datalist id="goplace">
+                    <option value="Banglore">
+                    <option value="Chennai">
+                    <option value="Hyderbhad">
+                    <option value="Mumbai">
+                    <option value="Delhi">
+                </datalist>
+                <label>Journey Date:</label><br>
+                <input type="date" name="journey_date" required><br><br>
+                <input type="text" name="passenger_name" placeholder="Your Name" required><br><br>
+                <input type="email" name="email" placeholder="Your email" required><br><br>
+                <input type="tel" name="phone" placeholder="Phone Number" required minlength="10" maxlength="10"><br><br>
+                <input type="number" name="seats" min="1" required placeholder="Enter Number of Seats"><br><br>
+                <button type="reset" class="btn1">Clear</button>
+                <button type="submit" class="btn1">Book Ticket</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="list">
+        <h1 class="subtitle"><span>OFFERS</span> FOR YOU</h1>
+        <div class="box-list">   
+            <div class="list-box">
+                <h2>Save Upto ₹200</h2>
+                <p>First booking ticket save upto ₹200.</p>
+                <i class="fa-solid fa-face-smile"></i>       
+            </div>
+            <div class="list-box">
+                <h2>Free Cancellation</h2>
+                <p>Get 100% refund on cancellation.</p>
+                <i class="fa-solid fa-face-grin-squint-tears"></i>       
+            </div>
+            <div class="list-box">
+                <h2>Introducing Flight Timetable</h2>
+                <p>Get local bus timeings between cities in your states.</p>
+                <i class="fa-solid fa-face-laugh-beam"></i>      
+            </div>
+            <div class="list-box">
+                <h2>Zero Convenience Fee</h2>
+                <p>Zero convenience fee on your first ticket.</p>
+                <i class="fa-solid fa-face-laugh-wink"></i>     
+            </div>
+        </div>
+</div>
+<section id="help">
+    <div class="booking-content">
+        <div class="booking-text">
+            <h2>How to Book flight Tickets on BookingFlight?</h2>
+            <dl>
+                <dt>Booking a flight ticket online on the BookingFlight app or website is very simple. Follow the stepwise process for bus
+                booking on BookingBus.</dt>
+                <li><strong>Enter Travel Details:</strong> Enter your source, destination & travel date to check the top-rated bus services available.</li>
+                <li><strong>Search Flight:</strong> Filter bus type, duration, bus timings, boarding and dropping point, number of seats available, user ratings & amenities for your desired route. </li>
+                <li><strong>Choose Flight:</strong> Select your preferred seat, boarding and dropping points. Once selected, check the ticket price details and proceed to pay.</li>
+                <li><strong>Enter Passenger Details:</strong> Fill in the passenger information and contact details.</li>
+                <li><strong>Payment:</strong>  Once you fill in the information, click on “Proceed” to pay to complete the payment process.</li>
+                <li><strong>Ticket Confirmation:</strong> After the payment process, receive the bus ticket confirmation on your registered email ID or mobile number. </li>
+            </dl>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="foot-ter">
+        <div class="foot-icon">
+            <h2>Follow US</h2>
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+        <div class="foot-text">
+            <h2>Book Ticket</h2>
+            <a href="#train">Train</a>
+            <a href="#bus">Bus</a>
+            <a href="#flight">Flight</a>
+        </div>
+    </div>
+    <p class="copyright"><i class="fa-regular fa-copyright"></i> Naresh 2025</p>
+    
+</footer>
+</body>
+</html>
